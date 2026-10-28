@@ -4,9 +4,9 @@ Group members: Aimee, Charlotte, and Sharon
 
 ## 1: Duplicated Code
 
-### What it is/Prevention
+### What it is
 
-Duplicated code is when the same or very similar code is repeated in multiple places, often by copying and pasting code. This can make the program harder to understand and increase the chance of errors when changes are needed. To prevent this, you should reuse existing methods instead of rewriting the same logic. Fowler’s Extract Method technique can help by moving repeated code into a separate, reusable method, making the program eimpler/easier to update.
+Duplicated code is when the same or very similar code is repeated in multiple places, often by copying and pasting code. This can make the program harder to understand and increase the chance of errors when changes are needed.
 
 ### How It Happens
 
@@ -16,13 +16,14 @@ Duplicated code is when the same or very similar code is repeated in multiple pl
 
 ### Prevention
 
-- Reuse existing functions instead of rewriting the same logic
+- Reuse existing functions and methods instead of rewriting the same logic
 - Review existing code before adding new functionality
 - Refactor duplicated code when you notice it
+- Fowler’s Extract Method technique can help by moving repeated code into a separate, reusable method, making the program simpler/easier to update
 
 ### Refactoring
 
-### Code Example 2 (CMPM 120 Final Project)
+#### Code Example 2 (CMPM 120 Final Project)
 
 #### Before
 
@@ -80,7 +81,7 @@ createPlayer(x, character){
 this.player1 = this.createPlayer(412, gameSettings.player1Character);
 
 //create player2
-this.player2 = this.createPayer(612, gameSettings.player2Character);
+this.player2 = this.createPlayer(612, gameSettings.player2Character);
 
 ```
 
@@ -94,7 +95,7 @@ this.player2 = this.createPayer(612, gameSettings.player2Character);
 
 ## 2: Mysterious Name
 
-### What it is/Prevention
+### What it is
 A mysterious name is a variable, function, class, or field whose name doesnt tell you what it holds or does. You usually end up having to read the surrounding code to figure out the meaning
 
 ### How It Happens
@@ -108,11 +109,11 @@ A mysterious name is a variable, function, class, or field whose name doesnt tel
 
 - Name things after what they mean not how they're used or how long they are
 - Use full words unless the short name is universal
-- Agree on some naming riles as a team
+- Agree on some naming rules as a team
 
 ### Refactoring
 
-### Code Example 1 Typescript (Demo 1)
+#### Code Example 1 Typescript (Demo 1)
 
 #### Before
 
@@ -128,7 +129,7 @@ numPerClick.textContent = `Coffees per click ${Math.floor(cupsPerClick)}`;
 ```
 
 #### What's Wrong 
-'numPerClick' sounds like it holds a number, but it is actually an 'HTMLParagraphElement' . The real number is cupsPerClick so a reader could really easily mix them up. It also doesnt match with the other display names in the file like `numCoffeeDisplay`, `productionDisplay`
+'numPerClick' sounds like it holds a number, but it is actually an 'HTMLParagraphElement'. The real number is cupsPerClick so a reader could really easily mix them up. It also doesn't match with the other display names in the file like `numCoffeeDisplay`, `productionDisplay`
 
 #### After
 
@@ -145,8 +146,8 @@ perClickDisplay.textContent = `Coffees per click ${Math.floor(cupsPerClick)}`;
 
 #### What Changed
 
-- Refactored uing [Rename Variable](https://refactoring.com/catalog/renameVariable.html)
+- Refactored using [Rename Variable](https://refactoring.com/catalog/renameVariable.html)
 - Renamed numPerClick to perClickDisplay
-- New name makes it clear that the variable stores an HTML element displaying the number of clicks instead of the number itself
+- New name makes it clear that the variable stores an HTML element displaying the number of coffees per click instead of the number itself
 - New name ends in `Display`, making it consistent with other variables holding HTML elements in the code 
 - Makes code easier to understand and reduces confusion with cupsPerClick
