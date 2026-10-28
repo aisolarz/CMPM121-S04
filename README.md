@@ -45,8 +45,9 @@ if (gameSettings.player1Character === 'purple') {
 ```typescript
 createPlayer(x, character){
     const isPurple = character === ‘purple’;
-	const texture = isPurple
-		? ‘player1_jetpack1’
+	
+    const texture = isPurple
+        ? ‘player1_jetpack1’
 		: ‘player2_jetpack1’;
 
 	const animation = isPurple
