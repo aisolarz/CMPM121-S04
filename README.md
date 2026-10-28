@@ -44,27 +44,27 @@ if (gameSettings.player1Character === 'purple') {
 **After**
 ```typescript
 createPlayer(x, character){
-		const isPurple = character === ‘purple’;
-		const texture = isPurple
-			? ‘player1_jetpack1’
-			: ‘player2_jetpack1’;
+    const isPurple = character === ‘purple’;
+	const texture = isPurple
+		? ‘player1_jetpack1’
+		: ‘player2_jetpack1’;
 
-		const animation = isPurple
-			? ‘player1Anims’
-			: ‘player2_Anims’;
+	const animation = isPurple
+		? ‘player1Anims’
+		: ‘player2_Anims’;
 
-		Const player = this.add.sprite(x, -100, texture).setScale(0.5);
+	const player = this.add.sprite(x, -100, texture).setScale(0.5);
 
-		player.play(animation);
+	player.play(animation);
 
-		Return player;
-	}
+	return player;
+}
 
-	//create player 1
-	this.player1 = this.createPlayer(412, gameSettings.player1Character);
+//create player 1
+this.player1 = this.createPlayer(412, gameSettings.player1Character);
 
-	//create player2
-	this.player2 = this.createPayer(612, gameSettings.player2Character);
+//create player2
+this.player2 = this.createPayer(612, gameSettings.player2Character);
 
 ```
 
