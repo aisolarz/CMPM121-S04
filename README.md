@@ -15,21 +15,24 @@ Duplicated code is when the same or very similar code is repeated in multiple pl
 **Before**
 ```typescript
 if (gameSettings.player1Character === 'purple') {
-                    this.player1 = this.add.sprite(412, -100, 'player1_jetpack1').setScale(0.5)
-                    this.player1.play('player1Anims');
-                }
-                if (gameSettings.player1Character === 'brown') {
-                    this.player1 = this.add.sprite(412, -100, 'player2_jetpack1').setScale(0.5)
-                    this.player1.play('player2Anims');
-                }
-                if (gameSettings.player2Character === 'purple') {
-                    this.player2 = this.add.sprite(612, -100, 'player1_jetpack1').setScale(0.5)
-                    this.player2.play('player1Anims');
-                }
-                if (gameSettings.player2Character === 'brown') {
-                    this.player2 = this.add.sprite(612, -100, 'player2_jetpack1').setScale(0.5)
-                    this.player2.play('player2Anims');
-                }
+    this.player1 = this.add.sprite(412, -100, 'player1_jetpack1').setScale(0.5)
+    this.player1.play('player1Anims');
+}
+
+if (gameSettings.player1Character === 'brown') {
+    this.player1 = this.add.sprite(412, -100, 'player2_jetpack1').setScale(0.5)
+    this.player1.play('player2Anims');
+}
+                
+if (gameSettings.player2Character === 'purple') {
+    this.player2 = this.add.sprite(612, -100, 'player1_jetpack1').setScale(0.5)
+    this.player2.play('player1Anims');
+}
+                
+if (gameSettings.player2Character === 'brown') {
+    this.player2 = this.add.sprite(612, -100, 'player2_jetpack1').setScale(0.5)
+    this.player2.play('player2Anims');
+}
 ```
 
 **Whats Wrong**
@@ -46,13 +49,9 @@ if (gameSettings.player1Character === 'purple') {
 createPlayer(x, character){
     const isPurple = character === ‘purple’;
 	
-    const texture = isPurple
-        ? ‘player1_jetpack1’
-		: ‘player2_jetpack1’;
+    const texture = isPurple ? ‘player1_jetpack1’ : ‘player2_jetpack1’;
 
-	const animation = isPurple
-		? ‘player1Anims’
-		: ‘player2_Anims’;
+	const animation = isPurple ? ‘player1Anims’ : ‘player2_Anims’;
 
 	const player = this.add.sprite(x, -100, texture).setScale(0.5);
 
