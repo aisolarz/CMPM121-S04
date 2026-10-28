@@ -4,12 +4,13 @@ Group members: Aimee, Charlotte, and Sharon
 
 # 1: Duplicated Code
 
-**What it is/Prevention**
+**What it is/Prevention:**
+
 Duplicated code is when the same or very similar code is repeated in multiple places, often by copying and pasting code. This can make the program harder to understand and increase the chance of errors when changes are needed. To prevent this, you should reuse existing methods instead of rewriting the same logic. Fowler’s Extract Method technique can help by moving repeated code into a separate, reusable method, making the program eimpler/easier to update.
 
-**Refactoring**
+**Refactoring:**
 
-### Code example from CMPM 120
+### Code example from CMPM 120 final project
 
 **Before**
 ```typescript
