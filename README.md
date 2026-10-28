@@ -51,13 +51,14 @@ createPlayer(x, character){
 	
     const texture = isPurple ? ‘player1_jetpack1’ : ‘player2_jetpack1’;
 
-	const animation = isPurple ? ‘player1Anims’ : ‘player2_Anims’;
+    const animation = isPurple ? ‘player1Anims’ : ‘player2_Anims’;
 
-	const player = this.add.sprite(x, -100, texture).setScale(0.5);
+    const player = this.add.sprite(x, -100, texture).setScale(0.5);
 
-	player.play(animation);
+    player.play(animation);
 
-	return player;
+    return player;
+
 }
 
 //create player 1
